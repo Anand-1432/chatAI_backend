@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
+mongoose.set('strictQuery', false);
 
-mongoose.connect(process.env.DB).then(() => {
+const db = process.env.DB;
+
+mongoose.connect(db).then(() => {
     console.log("connection established...!");
 }).catch((err) => {
     console.log(err);
